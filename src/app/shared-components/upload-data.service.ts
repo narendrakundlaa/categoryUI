@@ -3,12 +3,13 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UploadFile } from '../models/upload.model';
 
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class UploadDataService {
 
-  fileUploadUrl: string = 'http://10.117.189.179:7770/bank/categories/products';
+  fileUploadUrl: string = environment.baseUrl + 'products';
   constructor(private httpClient: HttpClient) { }
 
   sendFiles(event) {

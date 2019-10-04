@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Catagiries } from './models/catagiries.model';
 import { ProductList } from './models/products.model';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ import { ProductList } from './models/products.model';
 export class IngProjectService {
 
   /**category Api */
-  catagiriesUrl: string = 'http://10.117.189.179:7770/bank/categories';
+  catagiriesUrl: string = environment.baseUrl + 'categories';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -24,10 +24,10 @@ export class IngProjectService {
   }
   /** retrive products */
   getproducts(cate_id): Observable<ProductList[]> {
-    return this.httpClient.get<ProductList[]>('http://10.117.189.179:7770/bank/categories/' + cate_id)
+    return this.httpClient.get<ProductList[]>(environment.baseUrl + 'categories/' + cate_id)
   }
   /** */
   getproductsDetails(cate_id): Observable<ProductList[]> {
-    return this.httpClient.get<ProductList[]>('http://10.117.189.179:7770/bank/products/' + cate_id)
+    return this.httpClient.get<ProductList[]>(environment.baseUrl + 'products/' + cate_id)
   }
 }

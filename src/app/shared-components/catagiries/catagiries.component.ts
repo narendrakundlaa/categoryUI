@@ -40,12 +40,9 @@ export class CatagiriesComponent implements OnInit {
   }
 
   detailedView(id: number, prod: any) {
-
-
     this.ingProjectService.getproductsDetails(id).subscribe((prodList: any) => {
       this.productDescription = prodList.product;
       console.log(this.productDescription);
-
       this.router.navigate(['/catagories', id])
       localStorage.setItem('data', this.productDescription.productName);
       localStorage.setItem('dataDescription', this.productDescription.description);
