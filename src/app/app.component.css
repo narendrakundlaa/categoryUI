@@ -9,3 +9,10 @@
     padding: 50px;
     display: none;
   }
+
+  .ingTitle {
+    position: absolute;
+    top: 10px;
+    left: 501px;
+    color: white;
+  }

@@ -1,16 +1,15 @@
 <!-- <app-header></app-header> -->
 
-<a style="margin-left: 15px;" routerLinkActive="active" routerLink="/">Back to home</a>
+<a routerLinkActive="active" routerLink="/catagories">Back</a>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">ING</h4>
-                    <p class="card-text">Saving Account</p>
-                    <a href="#" class="card-link">Card type</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <h4 class="card-title text-warning">Product Specifications : <span
+                            class="text-primary">{{productNameSelected}}</span> </h4>
+
                 </div>
             </div>
         </div>
@@ -21,10 +20,9 @@
     <div class="row" *ngIf="this.productNameSelected != undefined && this.productNameSelected != ''">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
-            <div class="card">
-                Product Name : {{productNameSelected}} <br />
+            <div class="card p-4">
 
-                Product Description : {{proDes}}
+                <span class="font-weight-bold "> <u>Product Description :</u> </span>{{proDes}}
 
             </div>
 

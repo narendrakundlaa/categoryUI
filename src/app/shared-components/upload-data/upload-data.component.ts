@@ -37,8 +37,10 @@ export class UploadDataComponent implements OnInit {
       console.log(data);
       console.log(data.statusCode);
       if (data.statusCode == 200) {
-        alert('Data sublited successfully...')
+        alert('File is submited successfully...');
         this.event = '';
+      } else {
+        alert('Server issue: file uploading failed, please try again..');
       }
     });
 

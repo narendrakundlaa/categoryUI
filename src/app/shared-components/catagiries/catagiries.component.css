@@ -5,5 +5,11 @@
 #cursor {
     cursor: pointer;
     text-align: center;
-    
+
+}
+#title{
+   
+        position: relative;
+        top: 42px;
+        margin-left: 78px;
 }

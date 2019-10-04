@@ -16,6 +16,8 @@ export class CatagiriesComponent implements OnInit {
   prodList: ProductList[];
   data: any[];
   productDetails: any[];
+  productDescription: any;
+
   cate_id;
   constructor(private ingProjectService: IngProjectService, private router: Router) { }
 
@@ -39,14 +41,24 @@ export class CatagiriesComponent implements OnInit {
 
   detailedView(id: number, prod: any) {
 
-    this.router.navigate(['/catagories', id])
-    localStorage.setItem('data', prod.productName);
-    localStorage.setItem('dataDescription', prod.description);
+
+    this.ingProjectService.getproductsDetails(id).subscribe((prodList: any) => {
+      this.productDescription = prodList.product;
+      console.log(this.productDescription);
+
+      this.router.navigate(['/catagories', id])
+      localStorage.setItem('data', this.productDescription.productName);
+      localStorage.setItem('dataDescription', this.productDescription.description);
+
+    });
+
+
+
   }
 
   viewProducts(event) {
     this.ingProjectService.getproducts(event.categoryId).subscribe((prodList: any) => {
-      this.prodList = prodList.products;
+      this.prodList = prodList.product;
       console.log(this.prodList);
     });
     // debugger;

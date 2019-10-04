@@ -6,14 +6,11 @@
         </ul>
     </ng-template> -->
 <!-- </p-fileUpload> -->
-<marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
-    <span class="blink_me">Visit </span>
-    <a id="marquee" routerLinkActive="active" routerLink="/catagories">categories</a>
-</marquee>
+<a id="marquee" routerLinkActive="active" routerLink="/catagories">Product category</a>
 
 <marquee behavior="scroll" direction="right" onmouseover="this.stop();" onmouseout="this.start();">
 
-    <span>Apply personnel loan, Home loan etc.,</span>
+    <span id="prodTitle">Avail Banking products like Credit Card, Personal loan, Car loan...</span>
 </marquee>
 
 <input type="file" id="upload" (change)="fileChane($event)" name="file" />

@@ -14,19 +14,26 @@
 }
 #upload {
     position: absolute;
-    top: 16px;
-    right: -13px;
+    bottom: 144px;
+    left: 43%;
+
 }
 #marquee {
-    text-underline-position: none;
+    position: relative;
+    top: 90px;
+    margin-left: 54px;
 }
 img{
-    margin-left: 4px;
-    width: 551px;
+    width: 389px;
+    margin-left: 485px;
+    margin-top: -58px;
 }
 .blink_me {
     animation: blinker 1s linear infinite;
     color: red;
+  }
+  #prodTitle {
+    color: orange;
   }
   
   @keyframes blinker {
