@@ -1,0 +1,36 @@
+:host ::ng-deep button {
+    margin-right: .25em;
+}
+
+:host ::ng-deep .custom-toast .ui-toast-message {
+    color: #ffffff;
+    background: #FC466B;
+    background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);
+    background: linear-gradient(to right, #3F5EFB, #FC466B);
+}
+
+:host ::ng-deep .custom-toast .ui-toast-close-icon {
+    color: #ffffff;
+}
+#upload {
+    position: absolute;
+    top: 16px;
+    right: -13px;
+}
+#marquee {
+    text-underline-position: none;
+}
+img{
+    margin-left: 4px;
+    width: 551px;
+}
+.blink_me {
+    animation: blinker 1s linear infinite;
+    color: red;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

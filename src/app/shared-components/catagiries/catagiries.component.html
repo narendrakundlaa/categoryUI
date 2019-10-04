@@ -1,0 +1,87 @@
+<!-- <div class="container-fluid">
+    <div id="accordion" *ngFor="let value of catagiriesList; let i = index;">
+        <div class="card">
+            <div class="card-header" id="heading{{i}}">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" attr.data-target="#collapse{{i}}"
+                        aria-expanded="true" attr.aria-controls="collapse{{i}}" attr.aria-expanded="false">
+                        {{value.categoryName | titlecase}}
+                    </button>
+                </h5>
+            </div>
+            <div id="collapse{{i}}" class="collapse" attr.aria-labelledby="heading{{i}}" data-parent="#accordion">
+                <div class="card-body">
+                    {{value.message}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <div id="accordion">
+    <div class="card" *ngFor="let value of data; let i = index;">
+        <div class="card-header" id="heading" {{i}}>
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse" {{i}} aria-expanded="true"
+                    aria-controls="collapse" {{i}}>
+                    Collapsible Group Item #1
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapse" {{i}} class="collapse show" aria-labelledby="heading" {{i}} data-parent="#accordion">
+            <div class="card-body">
+                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+</div>
+
+<a style="margin-left: 15px;" routerLinkActive="active" routerLink="/">Back to home</a>
+
+<div *ngFor="let name of data">
+    <app-accordian [title]="name.name">
+
+        <div class="myPanelBody">
+            <h3 (click)="dataRead(name.id)">{{name.name | titlecase}}</h3>
+            <div>{{name.age}}</div>
+            <div>{{name.salary}}</div>
+            <div>{{name.company}}</div>
+        </div>
+        <div class="myPanelBody" *ngFor="let val of data2">
+            <li>{{val.company}}</li>
+        </div>
+    </app-accordian>
+</div>
+<app-footer></app-footer> -->
+<div class="container">
+
+    <br>
+    <div align="center">
+        <h3>Categories</h3>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <p-accordion>
+                <p-accordionTab *ngFor="let res of catagiriesList" (click)="viewProducts(res)">
+                    <p-header>
+                        <span (click)="viewProducts(res)">{{res.categoryName}} </span>
+                    </p-header>
+
+                    <div *ngFor="let prod of prodList">
+                        <ul class="flex-column pl-2 nav">
+                            <li class="nav-item" (click)="detailedView(prod.productId, prod)">
+                                <a id="cursor" class="nav-link py-0">{{prod.productName}}</a>
+                                <hr>
+                            </li>
+                        </ul>
+                    </div>
+                </p-accordionTab>
+            </p-accordion>
+
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>

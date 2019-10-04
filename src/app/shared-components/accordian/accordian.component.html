@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="card">
+        <h3 class="card-header pointer" style="background: blue" (click)="hiddenShow()">{{title | titlecase}}
+        </h3>
+        <div class="card-body" [hidden]='isHidden'>
+            <ng-content select='.myPanelBody'></ng-content>
+        </div>
+        <div class="card-body" [hidden]='isHidden'>
+            <ng-content select='.myPanelBody'></ng-content>
+        </div>
+    </div>
+</div>
