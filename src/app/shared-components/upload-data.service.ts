@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { UploadFile } from '../models/upload.model';
+import { HttpClient } from '@angular/common/http';
+
 
 import { environment } from 'src/environments/environment';
 @Injectable({
@@ -9,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UploadDataService {
 
-  fileUploadUrl: string = environment.baseUrl + 'products';
+  fileUploadUrl: string = environment.baseUrl + 'categories/products';
   constructor(private httpClient: HttpClient) { }
 
   sendFiles(event) {
